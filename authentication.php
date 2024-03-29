@@ -24,7 +24,7 @@
     $password = $_POST['password'];
 
     // Query untuk mencari user di database
-    $result = $db->query("SELECT * FROM Pengguna WHERE username = '$username'");
+    $result = $db->query ("SELECT * FROM Pengguna WHERE username = '$username'");
 
      // Cek apakah user ditemukan
      if ($result->num_rows > 0) {
