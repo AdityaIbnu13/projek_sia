@@ -32,3 +32,56 @@
         </form>
     </div>
 </div>
+<div class="card">
+    <div class="card-header">
+        <h3>Data Pembayaran</h3>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Invoice</th>
+                        <th>Tanggal</th>
+                        <th>Total</th>
+                        <th>Keterangan</th>
+                        <th><i class="bi bi-gear-fill"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>BY110324</td>
+                        <td>11/03/2024</td>
+                        <td>Rp. 1.000.000,-</td>
+                        <td>Pembayaran tagihan indihome</td>
+                        <td>
+                            <a href="#editPembayaran" class="text-decoration-none" data-bs-toggle="modal">
+                                <i class="bi bi-pencil-square text-success"></i>
+                            </a>
+                            <a href="" class="text-decoration-none">
+                                <i class="bi bi-trash text-danger"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>BY100324</td>
+                        <td>10/03/2024</td>
+                        <td>Rp. 900.000,-</td>
+                        <td>Pembayaran tagihan listrik</td>
+                        <td>
+                            <a href="" class="text-decoration-none">
+                                <i class="bi bi-pencil-square text-success"></i>
+                            </a>
+                            <a href="" class="text-decoration-none">
+                                <i class="bi bi-trash text-danger"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
