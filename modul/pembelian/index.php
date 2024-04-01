@@ -52,3 +52,65 @@
         </form>
     </div>
 </div>
+<div class="card">
+    <div class="card-header">
+        <h3>Data Pembelian</h3>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Invoice</th>
+                        <th>Tanggal</th>
+                        <th>Suplier</th>
+                        <th>Jumlah</th>
+                        <th>Harga</th>
+                        <th>Total</th>
+                        <th>Keterangan</th>
+                        <th><i class="bi bi-gear-fill"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>BL110324</td>
+                        <td>11/03/2024</td>
+                        <td>PT Suplier Jaya</td>
+                        <td>1</td>
+                        <td>Rp. 15.000.000,-</td>
+                        <td>Rp. 15.000.000,-</td>
+                        <td>Pembelian perlengkapan maintenance</td>
+                        <td>
+                            <a href="#editPembelian" class="text-decoration-none" data-bs-toggle="modal">
+                                <i class="bi bi-pencil-square text-success"></i>
+                            </a>
+                            <a href="" class="text-decoration-none">
+                                <i class="bi bi-trash text-danger"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>BL100324</td>
+                        <td>10/03/2024</td>
+                        <td>CV Maju Jaya</td>
+                        <td>5</td>
+                        <td>Rp. 10.000.000,-</td>
+                        <td>Rp. 50.000.000,-</td>
+                        <td>Pengadaan 5 unit laptop ASUS</td>
+                        <td>
+                            <a href="" class="text-decoration-none">
+                                <i class="bi bi-pencil-square text-success"></i>
+                            </a>
+                            <a href="" class="text-decoration-none">
+                                <i class="bi bi-trash text-danger"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
