@@ -1,48 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
 <?php
-    // Mulai session
-    session_start();
 
-    // Koneksi ke database (sesuaikan dengan settingan database Anda)
-    $db = new mysqli('localhost', 'root', '', 'sia');
+if($_SERVER["REQUEST_METHOD"]=="POST"){
 
-    if ($db->connect_error) {
-        die("Koneksi ke database gagal: " . $db->connect_error);
-    }
+require_once('koneksi.php');
 
-    // Mendapatkan data dari form login
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+session_start();
 
-    // Query untuk mencari user di database
-    $result = $db->query("SELECT * FROM Pengguna WHERE username = '$username'");
+$username = $_POST['username'];
 
-     // Cek apakah user ditemukan
-     if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
+$password = $_POST['password'];
 
-        // Cek password
-        if ($password == $user['password']) {
-            // Jika password benar, set session dan redirect ke halaman utama
-            $_SESSION['username'] = $username;
-            header('Location: index.php');
-        } else {
-            // Jika password salah, tampilkan pesan error
-            echo "<div class='alert alert-danger text-center'>Password salah</div>";
-        }
-    } else {
-        // Jika user tidak ditemukan, tampilkan pesan error
-        echo "<div class='alert alert-danger text-center'>User tidak ditemukan</div>";
-    }
+$query = "SELECT * FROM tbl_pengguna WHERE username='$username'";
+
+$result = $koneksi->query($query);
+
+if($result->num_rows>0){
+  $row = $result->fetch_assoc();
+
+  if(password_verify($password, $row['password'])){
+
+    $_SESSION['username']=$row['username'];
+    $_SESSION['nama_lengkap']=$row['nama_lengkap']; 
+    $_SESSION['jabatan']=$row['jabatan'];
+    $_SESSION['hak_akses']=$row['hak_akses']; 
+    header('location: dashboard.php');
+
+  }else{
+
+    $_SESSION['pesan']="username atau password tidak valid!!!"; 
+    header('location: index.php');
+
+  }
+
+}else{
+
+  $_SESSION['pesan']="username atau password tidak valid!!!"; 
+  header('location:index.php');
+
+}
+
+}else{
+
+header('location:index.php');
+
+}
+
 ?>
-</body>
-</html>
