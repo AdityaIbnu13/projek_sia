@@ -19,6 +19,7 @@ if($result->num_rows>0){
 
   if(password_verify($password, $row['password'])){
 
+    
     $_SESSION['username']=$row['username'];
     $_SESSION['nama_lengkap']=$row['nama_lengkap']; 
     $_SESSION['jabatan']=$row['jabatan'];
