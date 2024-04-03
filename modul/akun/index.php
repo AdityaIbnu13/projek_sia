@@ -27,3 +27,96 @@
     </div>
 </div>
 
+<div class="card">
+    <div class="card-header">
+        <h3>Data Akun</h3>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nama Akun</th>
+                        <th>Jenis Akun</th>
+                        <th>Type Saldo</th>
+                        <th><i class="bi bi-gear-fill"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Kas</td>
+                        <td>Aset</td>
+                        <td>Debit</td>
+                        <td>
+                            <a href="#editAkun" class="text-decoration-none" data-bs-toggle="modal">
+                                <i class="bi bi-pencil-square text-success"></i>
+                            </a>
+                            <a href="" class="text-decoration-none">
+                                <i class="bi bi-trash text-danger"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Piutang Usaha</td>
+                        <td>Aset</td>
+                        <td>Debit</td>
+                        <td>
+                            <a href="" class="text-decoration-none">
+                                <i class="bi bi-pencil-square text-success"></i>
+                            </a>
+                            <a href="" class="text-decoration-none">
+                                <i class="bi bi-trash text-danger"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Perlengkapan</td>
+                        <td>Aset</td>
+                        <td>Debit</td>
+                        <td>
+                            <a href="" class="text-decoration-none">
+                                <i class="bi bi-pencil-square text-success"></i>
+                            </a>
+                            <a href="" class="text-decoration-none">
+                                <i class="bi bi-trash text-danger"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Utang Usaha</td>
+                        <td>Kewajiban</td>
+                        <td>Kredit</td>
+                        <td>
+                            <a href="" class="text-decoration-none">
+                                <i class="bi bi-pencil-square text-success"></i>
+                            </a>
+                            <a href="" class="text-decoration-none">
+                                <i class="bi bi-trash text-danger"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Modal</td>
+                        <td>Ekuitas</td>
+                        <td>Kredit</td>
+                        <td>
+                            <a href="" class="text-decoration-none">
+                                <i class="bi bi-pencil-square text-success"></i>
+                            </a>
+                            <a href="" class="text-decoration-none">
+                                <i class="bi bi-trash text-danger"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
