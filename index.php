@@ -1,6 +1,17 @@
+<?php
+
+session_start();
+
+if(isset($_SESSION['username'])){
+  header('location: dashboard.php');
+  exit;
+}
+
+// Konten yang ingin ditampilkan jika tidak ada sesi yang aktif
+
+?>
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +26,19 @@
       <div class="col-md-4 m-auto mt-5 shadow p-3 bg-white">
         <form action="authentication.php" method="post">
           <h3 class="text-center">Login System</h3>
+          <?php
+
+            session_start();
+
+            if(isset($_SESSION['pesan'])){
+            ?>
+
+            <div class="alert alert-danger"><?= $_SESSION['pesan']; ?></div>
+
+            <?php
+            unset($_SESSION['pesan']);
+          }
+          ?>
           <hr>
           <div class="input-group mb-3">
             <span class="input-group-text">
@@ -42,3 +66,10 @@
 </body>
 
 </html>
+<?php
+
+session_start();
+
+session_destroy();
+
+?>
