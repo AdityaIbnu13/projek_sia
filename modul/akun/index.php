@@ -120,3 +120,37 @@
     </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="editAkun" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Akun</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/proses_edit_akun" method="post">
+                    <div class="mb-3">
+                        <label class="form-label" for="nama_akun">Nama akun</label>
+                        <input type="text" class="form-control" name="nama_akun" id="nama_akun" value="Kas">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="jenis_akun">Jenis akun</label>
+                        <input type="text" class="form-control" name="jenis_akun" id="jenis_akun" value="Aset">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="type_saldo">Type saldo</label>
+                        <select class="form-select" name="type_saldo" id="type_saldo">
+                            <option value="debit" selected>Debit</option>
+                            <option value="kredit">Kredit</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
