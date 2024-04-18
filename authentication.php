@@ -1,49 +1,33 @@
 <?php
+    // Mulai session
+    session_start();
 
-if($_SERVER["REQUEST_METHOD"]=="POST"){
+    include_once('koneksi.php');
 
-require_once('koneksi.php');
+    // Mendapatkan data dari form login
+    $username = $_POST['username'];
+    $plainTextPassword = $_POST['password'];
 
-session_start();
+    // Query untuk mencari user di database
+    $result = $conn->query("SELECT * FROM pengguna WHERE username = '$username'");
 
-$username = $_POST['username'];
+    // Cek apakah user ditemukan
+    if ($result->num_rows > 0) {
+        $pengguna = $result->fetch_assoc();
+        $hashedPassword = $pengguna['password']; // Ambil hash password dari database
 
-$password = $_POST['password'];
+        // Verifikasi password
+        if (password_verify($plainTextPassword, $hashedPassword)) {
+            // Password cocok
+            $_SESSION['username'] = $username;
+            header('Location: dashboard.php');
+        } else {
+            // Password tidak cocok
+            echo "Password salah.";
+        }
+    } else {
+        echo "User tidak ditemukan.";
+    }
 
-$query = "SELECT * FROM tbl_pengguna WHERE username='$username'";
-
-$result = $koneksi->query($query);
-
-if($result->num_rows>0){
-  $row = $result->fetch_assoc();
-
-  if(password_verify($password, $row['password'])){
-
-    
-    $_SESSION['username']=$row['username'];
-    $_SESSION['nama_lengkap']=$row['nama_lengkap']; 
-    $_SESSION['jabatan']=$row['jabatan'];
-    $_SESSION['hak_akses']=$row['hak_akses']; 
-    header('location: dashboard.php');
-
-  }else{
-
-    $_SESSION['pesan']="username atau password tidak valid!!!"; 
-    header('location: index.php');
-
-  }
-
-}else{
-
-  $_SESSION['pesan']="username atau password tidak valid!!!"; 
-  header('location:index.php');
-
-}
-
-}else{
-
-header('location:index.php');
-
-}
-
+    $conn->close();
 ?>

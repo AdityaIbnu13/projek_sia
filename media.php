@@ -3,14 +3,14 @@ if(!isset($_GET['modul'])){
     include_once('modul/home/index.php');
 }else if($_GET['modul']=="transaksi"){
     include_once('modul/transaksi/index.php');
-}else if($_GET[modul]=="akun"){
+}else if($_GET['modul']=="akun"){
     include_once('modul/akun/index.php');
 }else if($_GET['modul']=="pembelian"){
-    include_once('modul/pembelin/index.php');
+    include_once('modul/pembelian/index.php');
 }else if($_GET['modul']=="pembayaran"){
-    include_once('modul/pebayaran/index.php');
+    include_once('modul/pembayaran/index.php');
 }else if($_GET['modul']=="penjualan"){
-    include_once('modu/penjualan/index.php');
+    include_once('modul/penjualan/index.php');
 }else if($_GET['modul']=="pelanggan"){
     include_once('modul/pelanggan/index.php');
 }else if($_GET['modul']=="barang"){
