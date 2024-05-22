@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 include_once($_SERVER['DOCUMENT_ROOT'] . "/projek_sia/koneksi.php");
 
 $koneksi = mysqli_connect("localhost", "root", "", "app_sia");
